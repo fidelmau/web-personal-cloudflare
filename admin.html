@@ -69,6 +69,31 @@
             margin-bottom: 2rem;
             color: var(--accent);
             text-decoration: none;
+        .json-editor-box {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .json-item {
+            background: var(--bg-surface);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        .remove-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
         }
     </style>
     <!-- Cargar Supabase desde CDN -->
@@ -124,10 +149,23 @@
                         <input type="email" id="edit-email" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="edit-phone">Teléfono de Contacto</label>
-                        <input type="text" id="edit-phone" class="form-control">
+                        <label for="edit-linkedin">Enlace de LinkedIn</label>
+                        <input type="url" id="edit-linkedin" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="save-btn">Guardar Cambios</button>
+                    
+                    <h3 style="margin-top:2rem; margin-bottom:1rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">Habilidades (Skills)</h3>
+                    <div id="skills-editor" class="json-editor-box">
+                        <!-- Skills will be injected here -->
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="add-skill-btn" style="margin-bottom: 1.5rem; font-size:0.9rem;">+ Añadir Categoría de Habilidad</button>
+
+                    <h3 style="margin-top:2rem; margin-bottom:1rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">Experiencia Profesional</h3>
+                    <div id="experience-editor" class="json-editor-box">
+                        <!-- Experience will be injected here -->
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="add-exp-btn" style="margin-bottom: 1.5rem; font-size:0.9rem;">+ Añadir Trabajo</button>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 1.2rem; font-size: 1.1rem;" id="save-btn">Guardar Todos Los Cambios</button>
                 </form>
             </div>
 

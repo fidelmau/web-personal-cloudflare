@@ -71,6 +71,38 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('display-phone').innerText = data.contact_phone;
                     document.getElementById('link-phone').href = `tel:${data.contact_phone.replace(/\s+/g, '')}`;
                 }
+                if (data.linkedin_url) {
+                    document.getElementById('link-linkedin').href = data.linkedin_url;
+                }
+
+                // Update Skills
+                if (data.skills && Array.isArray(data.skills) && data.skills.length > 0) {
+                    const skillsContainer = document.getElementById('display-skills');
+                    skillsContainer.innerHTML = data.skills.map(skill => `
+                        <div class="skill-category">
+                            <h3>${skill.category}</h3>
+                            <ul>
+                                ${skill.items.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `).join('');
+                }
+
+                // Update Experience
+                if (data.experience && Array.isArray(data.experience) && data.experience.length > 0) {
+                    const expContainer = document.getElementById('display-experience');
+                    expContainer.innerHTML = data.experience.map(exp => `
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content card">
+                                <span class="timeline-date">${exp.date}</span>
+                                <h3>${exp.role}</h3>
+                                <h4 class="company">${exp.company}</h4>
+                                <p>${exp.description}</p>
+                            </div>
+                        </div>
+                    `).join('');
+                }
             }
         } catch (err) {
             console.error("Error fetching data from Supabase:", err);
