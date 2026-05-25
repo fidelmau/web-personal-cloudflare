@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -34,9 +36,9 @@
         <section id="home" class="hero">
             <div class="hero-content fade-in-up">
                 <p class="greeting">Hello, I am</p>
-                <h1 class="name">Fidel Maurín<br>Martínez Jiménez</h1>
-                <h2 class="title">Software Quality Assurance Engineer</h2>
-                <p class="tagline">Passionate about ensuring quality, efficiency, and reliability in every project through meticulous manual testing and advanced test automation.</p>
+                <h1 class="name" id="display-name">Fidel Maurín<br>Martínez Jiménez</h1>
+                <h2 class="title" id="display-title">Software Quality Assurance Engineer</h2>
+                <p class="tagline" id="display-tagline">Passionate about ensuring quality, efficiency, and reliability in every project through meticulous manual testing and advanced test automation.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
                     <a href="#experience" class="btn btn-secondary">View Experience</a>
@@ -52,7 +54,7 @@
             <div class="container section-container">
                 <h2 class="section-title reveal">About Me</h2>
                 <div class="about-content reveal">
-                    <div class="about-text">
+                    <div class="about-text" id="display-about">
                         <p>With 5 years of experience in the field of code analysis and software testing, I am passionate about ensuring quality and efficiency in every project I participate in. My professional journey has been focused on analysis and testing, where I have honed my ability to identify flaws and develop solutions to enhance user experience.</p>
                         <p>Throughout my career, I have worked in diverse environments and projects, from web applications to mobile, always striving to overcome challenges and deliver high-quality products. My meticulous approach and attention to detail have allowed me to find effective solutions even in the most complex problems.</p>
                         <p>I have developed experience in test automation using tools such as <strong>Playwright</strong> and <strong>Cypress</strong>. In addition to my technical skills, I value effective communication and teamwork, believing that strong collaboration among development teams, QA, and other stakeholders is essential for project success.</p>
@@ -172,14 +174,14 @@
                 <p class="contact-subtitle reveal">I am always open to discussing QA strategies, new projects, or opportunities to be part of your vision.</p>
                 
                 <div class="contact-info reveal">
-                    <a href="mailto:fidelmaurin@gmail.com" class="contact-link">
+                    <a href="mailto:fidelmaurin@gmail.com" class="contact-link" id="link-email">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        fidelmaurin@gmail.com
+                        <span id="display-email">fidelmaurin@gmail.com</span>
                     </a>
                     <span class="contact-divider">|</span>
-                    <a href="tel:+34631750906" class="contact-link">
+                    <a href="tel:+34631750906" class="contact-link" id="link-phone">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        +34 631750906
+                        <span id="display-phone">+34 631750906</span>
                     </a>
                 </div>
 
@@ -195,10 +197,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Fidel Maurín Martínez Jiménez. All rights reserved.</p>
+            <p>&copy; 2026 Fidel Maurín Martínez Jiménez. All rights reserved. | <a href="admin.html" style="color: var(--text-secondary); text-decoration: none;">Admin Panel</a></p>
         </div>
     </footer>
 
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
