@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const addSkillBtn = document.getElementById('add-skill-btn');
     const expEditor = document.getElementById('experience-editor');
     const addExpBtn = document.getElementById('add-exp-btn');
+    const langSelect = document.getElementById('lang-select');
 
     // Comprobar si ya estamos logueados
     const { data: { session } } = await supabaseClient.auth.getSession();
@@ -84,10 +85,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         loginSection.style.display = 'none';
         dashboard.style.display = 'block';
         
-        // Cargar datos actuales desde Supabase
+        const currentLocale = langSelect.value;
+        
+        // Cargar datos actuales desde Supabase para el idioma seleccionado
         const { data, error } = await supabaseClient
             .from('profile')
             .select('*')
+            .eq('locale', currentLocale)
             .single();
 
         if (error && error.code !== 'PGRST116') {
@@ -116,8 +120,23 @@ document.addEventListener('DOMContentLoaded', async () => {
                     expEditor.appendChild(createExpItem(exp.date, exp.role, exp.company, exp.description));
                 });
             }
+        } else {
+            // Si no hay datos (PGRST116), limpiar los campos
+            document.getElementById('edit-name').value = '';
+            document.getElementById('edit-title').value = '';
+            document.getElementById('edit-tagline').value = '';
+            document.getElementById('edit-about').value = '';
+            document.getElementById('edit-email').value = '';
+            document.getElementById('edit-phone').value = '';
+            document.getElementById('edit-linkedin').value = '';
+            skillsEditor.innerHTML = '';
+            expEditor.innerHTML = '';
         }
     }
+
+    langSelect.addEventListener('change', () => {
+        showDashboard();
+    });
 
     // Eventos
     loginForm.addEventListener('submit', async (e) => {
@@ -177,6 +196,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const profileData = {
             id: 1,
+            locale: langSelect.value,
             name: document.getElementById('edit-name').value,
             title: document.getElementById('edit-title').value,
             tagline: document.getElementById('edit-tagline').value,

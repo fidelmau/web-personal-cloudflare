@@ -17,10 +17,16 @@
         <div class="nav-container">
             <a href="#home" class="logo">Fidel QA.</a>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+                <a href="#about" id="nav-about">About</a>
+                <a href="#skills" id="nav-skills">Skills</a>
+                <a href="#experience" id="nav-experience">Experience</a>
+                <a href="#contact" id="nav-contact">Contact</a>
+                <div class="lang-switcher" style="display:flex; gap:0.5rem; align-items:center; margin-left:1rem; border-left:1px solid var(--border-color); padding-left:1rem;">
+                    <a href="#" class="lang-btn" data-lang="en">EN</a>
+                    <a href="#" class="lang-btn" data-lang="es">ES</a>
+                    <a href="#" class="lang-btn" data-lang="fr">FR</a>
+                    <a href="#" class="lang-btn" data-lang="ru">RU</a>
+                </div>
             </div>
             <!-- Mobile Menu Toggle -->
             <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Menu">
@@ -35,13 +41,13 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content fade-in-up">
-                <p class="greeting">Hello, I am</p>
+                <p class="greeting" id="hero-greeting">Hello, I am</p>
                 <h1 class="name" id="display-name">Fidel Maurín<br>Martínez Jiménez</h1>
                 <h2 class="title" id="display-title">Software Quality Assurance Engineer</h2>
                 <p class="tagline" id="display-tagline">Passionate about ensuring quality, efficiency, and reliability in every project through meticulous manual testing and advanced test automation.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View Experience</a>
+                    <a href="#contact" class="btn btn-primary" id="btn-contact">Get In Touch</a>
+                    <a href="#experience" class="btn btn-secondary" id="btn-experience">View Experience</a>
                 </div>
             </div>
             <div class="hero-visual fade-in">
@@ -52,7 +58,7 @@
         <!-- About Section -->
         <section id="about" class="about-section">
             <div class="container section-container">
-                <h2 class="section-title reveal">About Me</h2>
+                <h2 class="section-title reveal" id="title-about">About Me</h2>
                 <div class="about-content reveal">
                     <div class="about-text" id="display-about">
                         <p>With 5 years of experience in the field of code analysis and software testing, I am passionate about ensuring quality and efficiency in every project I participate in. My professional journey has been focused on analysis and testing, where I have honed my ability to identify flaws and develop solutions to enhance user experience.</p>
@@ -62,11 +68,11 @@
                     <div class="stats-grid">
                         <div class="stat-card">
                             <h3 class="stat-number">5+</h3>
-                            <p class="stat-label">Years Experience</p>
+                            <p class="stat-label" id="stat-years">Years Experience</p>
                         </div>
                         <div class="stat-card">
                             <h3 class="stat-number">6</h3>
-                            <p class="stat-label">Languages Spoken</p>
+                            <p class="stat-label" id="stat-languages">Languages Spoken</p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +82,7 @@
         <!-- Skills Section -->
         <section id="skills" class="skills-section">
             <div class="container section-container">
-                <h2 class="section-title reveal">Top Skills & Tools</h2>
+                <h2 class="section-title reveal" id="title-skills">Top Skills & Tools</h2>
                 <div class="skills-grid reveal" id="display-skills">
                     <div class="skill-category">
                         <h3>Quality Assurance</h3>
@@ -121,7 +127,7 @@
         <!-- Experience Section (Services/Projects) -->
         <section id="experience" class="experience-section">
             <div class="container section-container">
-                <h2 class="section-title reveal">Professional Experience</h2>
+                <h2 class="section-title reveal" id="title-experience">Professional Experience</h2>
                 <div class="timeline reveal" id="display-experience">
                     <!-- Job 1 -->
                     <div class="timeline-item">
@@ -170,8 +176,8 @@
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <div class="container section-container center-text">
-                <h2 class="section-title reveal">Get In Touch</h2>
-                <p class="contact-subtitle reveal">I am always open to discussing QA strategies, new projects, or opportunities to be part of your vision.</p>
+                <h2 class="section-title reveal" id="title-contact">Get In Touch</h2>
+                <p class="contact-subtitle reveal" id="subtitle-contact">I am always open to discussing QA strategies, new projects, or opportunities to be part of your vision.</p>
                 
                 <div class="contact-info reveal">
                     <a href="mailto:fidelmaurin@gmail.com" class="contact-link" id="link-email">
@@ -189,6 +195,10 @@
                     <a href="https://www.linkedin.com/in/fidel-maurínmartínez-jiménez" target="_blank" class="social-btn" aria-label="LinkedIn" id="link-linkedin">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         LinkedIn
+                    </a>
+                    <a href="CV_Fidel_Maurin.pdf" download="CV_Fidel_Maurin_Martinez.pdf" class="social-btn btn-primary" aria-label="Download CV" id="link-cv" style="background-color: var(--primary-color); color: white; border: none; padding: 0.8rem 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        Get CV
                     </a>
                 </div>
             </div>

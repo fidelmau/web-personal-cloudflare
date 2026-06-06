@@ -127,6 +127,16 @@
                 <button id="logout-btn" class="btn btn-secondary logout-btn">Cerrar Sesión</button>
                 <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Editar Perfil</h2>
                 
+                <div class="form-group" style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; border: 1px solid var(--accent);">
+                    <label for="lang-select" style="color: var(--accent); font-weight: bold;">Idioma a Editar:</label>
+                    <select id="lang-select" class="form-control" style="font-weight: bold; cursor: pointer;">
+                        <option value="en">Inglés (E)</option>
+                        <option value="es">Español (ES)</option>
+                        <option value="fr">Francés (FR)</option>
+                        <option value="ru">Ruso (RU)</option>
+                    </select>
+                </div>
+                
                 <form id="edit-form">
                     <div class="form-group">
                         <label for="edit-name">Nombre</label>
@@ -147,6 +157,10 @@
                     <div class="form-group">
                         <label for="edit-email">Email de Contacto</label>
                         <input type="email" id="edit-email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-phone">Teléfono de Contacto</label>
+                        <input type="text" id="edit-phone" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="edit-linkedin">Enlace de LinkedIn</label>
